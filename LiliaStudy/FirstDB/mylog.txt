@@ -1,0 +1,666 @@
+info: 11.03.2024 13:11:24.489 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.27 initialized 'Config' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.27' with options: None
+dbug: 11.03.2024 13:11:24.561 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'Config'.
+dbug: 11.03.2024 13:11:24.562 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'Config'.
+dbug: 11.03.2024 13:11:24.563 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'Config'.
+dbug: 11.03.2024 13:11:24.563 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'Config'.
+dbug: 11.03.2024 13:11:24.566 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'Config'.
+dbug: 11.03.2024 13:11:24.566 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'Config'.
+dbug: 11.03.2024 13:11:24.566 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'Config'.
+dbug: 11.03.2024 13:11:24.566 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'Config'.
+dbug: 11.03.2024 13:11:24.599 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'Config' disposed.
+info: 11.03.2024 13:12:40.122 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.27 initialized 'Config' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.27' with options: None
+dbug: 11.03.2024 13:12:40.147 RelationalEventId.MigrateUsingConnection[20400] (Microsoft.EntityFrameworkCore.Migrations) 
+      Migrating using database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.152 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.158 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.164 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+dbug: 11.03.2024 13:12:40.167 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (2ms).
+dbug: 11.03.2024 13:12:40.168 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.168 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.172 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+info: 11.03.2024 13:12:40.186 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+dbug: 11.03.2024 13:12:40.187 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.188 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.189 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.189 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.189 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+dbug: 11.03.2024 13:12:40.189 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (0ms).
+dbug: 11.03.2024 13:12:40.189 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.189 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.189 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+info: 11.03.2024 13:12:40.189 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+dbug: 11.03.2024 13:12:40.189 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.189 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.198 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 11.03.2024 13:12:40.198 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 11.03.2024 13:12:40.198 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.198 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.199 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+info: 11.03.2024 13:12:40.199 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+dbug: 11.03.2024 13:12:40.201 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader was disposed.
+dbug: 11.03.2024 13:12:40.201 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.201 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+info: 11.03.2024 13:12:40.207 RelationalEventId.MigrationApplying[20402] (Microsoft.EntityFrameworkCore.Migrations) 
+      Applying migration '20240311111124_CustomerIDUpdate'.
+dbug: 11.03.2024 13:12:40.231 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.232 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.233 RelationalEventId.TransactionStarting[20209] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Beginning transaction with isolation level 'Unspecified'.
+dbug: 11.03.2024 13:12:40.236 RelationalEventId.TransactionStarted[20200] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Began transaction with isolation level 'Serializable'.
+dbug: 11.03.2024 13:12:40.237 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:12:40.237 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:12:40.237 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER TABLE "Customers" RENAME COLUMN "Id" TO "Customer_id";
+info: 11.03.2024 13:12:40.246 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER TABLE "Customers" RENAME COLUMN "Id" TO "Customer_id";
+dbug: 11.03.2024 13:12:40.246 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:12:40.246 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:12:40.246 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+      VALUES ('20240311111124_CustomerIDUpdate', '6.0.27');
+info: 11.03.2024 13:12:40.246 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+      VALUES ('20240311111124_CustomerIDUpdate', '6.0.27');
+dbug: 11.03.2024 13:12:40.247 RelationalEventId.TransactionCommitting[20210] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committing transaction.
+dbug: 11.03.2024 13:12:40.447 RelationalEventId.TransactionCommitted[20202] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committed transaction.
+dbug: 11.03.2024 13:12:40.449 RelationalEventId.TransactionDisposed[20204] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Disposing transaction.
+dbug: 11.03.2024 13:12:40.449 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.450 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:12:40.452 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'Config' disposed.
+info: 11.03.2024 13:19:03.827 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.27 initialized 'Config' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.27' with options: None
+dbug: 11.03.2024 13:19:03.896 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'Config'.
+dbug: 11.03.2024 13:19:03.897 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'Config'.
+dbug: 11.03.2024 13:19:03.897 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'Config'.
+dbug: 11.03.2024 13:19:03.897 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'Config'.
+dbug: 11.03.2024 13:19:03.915 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'Config'.
+dbug: 11.03.2024 13:19:03.915 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'Config'.
+dbug: 11.03.2024 13:19:03.915 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'Config'.
+dbug: 11.03.2024 13:19:03.915 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'Config'.
+dbug: 11.03.2024 13:19:03.955 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'Config' disposed.
+info: 11.03.2024 13:19:20.101 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.27 initialized 'Config' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.27' with options: None
+dbug: 11.03.2024 13:19:20.125 RelationalEventId.MigrateUsingConnection[20400] (Microsoft.EntityFrameworkCore.Migrations) 
+      Migrating using database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.130 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.135 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.141 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+dbug: 11.03.2024 13:19:20.144 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (2ms).
+dbug: 11.03.2024 13:19:20.145 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.145 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.149 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+info: 11.03.2024 13:19:20.159 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+dbug: 11.03.2024 13:19:20.160 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.161 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.161 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.162 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.162 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+dbug: 11.03.2024 13:19:20.162 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (0ms).
+dbug: 11.03.2024 13:19:20.162 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.162 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.162 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+info: 11.03.2024 13:19:20.162 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+dbug: 11.03.2024 13:19:20.162 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.162 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.171 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 11.03.2024 13:19:20.171 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 11.03.2024 13:19:20.171 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.171 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.171 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+info: 11.03.2024 13:19:20.171 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+dbug: 11.03.2024 13:19:20.174 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader was disposed.
+dbug: 11.03.2024 13:19:20.174 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.174 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+info: 11.03.2024 13:19:20.179 RelationalEventId.MigrationApplying[20402] (Microsoft.EntityFrameworkCore.Migrations) 
+      Applying migration '20240311111903_IgnoreOrderDatails'.
+dbug: 11.03.2024 13:19:20.198 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.198 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.200 RelationalEventId.TransactionStarting[20209] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Beginning transaction with isolation level 'Unspecified'.
+dbug: 11.03.2024 13:19:20.201 RelationalEventId.TransactionStarted[20200] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Began transaction with isolation level 'Serializable'.
+dbug: 11.03.2024 13:19:20.202 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:19:20.202 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:19:20.202 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      DROP TABLE "OrderDetails";
+info: 11.03.2024 13:19:20.312 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (109ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      DROP TABLE "OrderDetails";
+dbug: 11.03.2024 13:19:20.312 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:19:20.312 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:19:20.312 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+      VALUES ('20240311111903_IgnoreOrderDatails', '6.0.27');
+info: 11.03.2024 13:19:20.312 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+      VALUES ('20240311111903_IgnoreOrderDatails', '6.0.27');
+dbug: 11.03.2024 13:19:20.313 RelationalEventId.TransactionCommitting[20210] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committing transaction.
+dbug: 11.03.2024 13:19:20.384 RelationalEventId.TransactionCommitted[20202] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committed transaction.
+dbug: 11.03.2024 13:19:20.385 RelationalEventId.TransactionDisposed[20204] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Disposing transaction.
+dbug: 11.03.2024 13:19:20.385 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.385 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:19:20.386 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'Config' disposed.
+info: 11.03.2024 13:21:39.816 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.27 initialized 'Config' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.27' with options: None
+dbug: 11.03.2024 13:21:39.882 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'Config'.
+dbug: 11.03.2024 13:21:39.884 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'Config'.
+dbug: 11.03.2024 13:21:39.884 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'Config'.
+dbug: 11.03.2024 13:21:39.884 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'Config'.
+dbug: 11.03.2024 13:21:39.901 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:21:39.907 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:21:39.913 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+dbug: 11.03.2024 13:21:39.916 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (1ms).
+dbug: 11.03.2024 13:21:39.916 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:21:39.917 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:21:39.920 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+info: 11.03.2024 13:21:39.931 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+dbug: 11.03.2024 13:21:39.932 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:21:39.933 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:21:39.942 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 11.03.2024 13:21:39.942 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 11.03.2024 13:21:39.942 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:21:39.942 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:21:39.942 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+info: 11.03.2024 13:21:39.943 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+dbug: 11.03.2024 13:21:39.945 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader was disposed.
+dbug: 11.03.2024 13:21:39.945 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:21:39.945 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:21:39.946 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'Config' disposed.
+info: 11.03.2024 13:39:07.099 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.27 initialized 'Config' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.27' with options: None
+dbug: 11.03.2024 13:39:07.184 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'Config'.
+dbug: 11.03.2024 13:39:07.186 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'Config'.
+dbug: 11.03.2024 13:39:07.186 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'Config'.
+dbug: 11.03.2024 13:39:07.186 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'Config'.
+dbug: 11.03.2024 13:39:07.188 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'Config'.
+dbug: 11.03.2024 13:39:07.188 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'Config'.
+dbug: 11.03.2024 13:39:07.188 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'Config'.
+dbug: 11.03.2024 13:39:07.188 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'Config'.
+dbug: 11.03.2024 13:39:07.340 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'Config' disposed.
+info: 11.03.2024 13:39:19.484 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 6.0.27 initialized 'Config' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.27' with options: None
+dbug: 11.03.2024 13:39:19.675 RelationalEventId.MigrateUsingConnection[20400] (Microsoft.EntityFrameworkCore.Migrations) 
+      Migrating using database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.681 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.687 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.693 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+dbug: 11.03.2024 13:39:19.696 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (3ms).
+dbug: 11.03.2024 13:39:19.697 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.698 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.701 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+info: 11.03.2024 13:39:19.712 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+dbug: 11.03.2024 13:39:19.713 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.714 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.714 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.715 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.715 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+dbug: 11.03.2024 13:39:19.715 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (0ms).
+dbug: 11.03.2024 13:39:19.715 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.715 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.715 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+info: 11.03.2024 13:39:19.715 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+dbug: 11.03.2024 13:39:19.715 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.715 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.724 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 11.03.2024 13:39:19.724 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 11.03.2024 13:39:19.724 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.724 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.724 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+info: 11.03.2024 13:39:19.725 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+dbug: 11.03.2024 13:39:19.727 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader was disposed.
+dbug: 11.03.2024 13:39:19.727 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.728 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+info: 11.03.2024 13:39:19.734 RelationalEventId.MigrationApplying[20402] (Microsoft.EntityFrameworkCore.Migrations) 
+      Applying migration '20240311113907_TablePeopleAndAddOrderIdAgain'.
+dbug: 11.03.2024 13:39:19.769 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.769 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:19.771 RelationalEventId.TransactionStarting[20209] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Beginning transaction with isolation level 'Unspecified'.
+dbug: 11.03.2024 13:39:19.773 RelationalEventId.TransactionStarted[20200] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Began transaction with isolation level 'Serializable'.
+dbug: 11.03.2024 13:39:19.774 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:19.774 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:19.775 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER TABLE "Customers" RENAME TO "People";
+info: 11.03.2024 13:39:19.776 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER TABLE "Customers" RENAME TO "People";
+dbug: 11.03.2024 13:39:19.776 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:19.776 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:19.776 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "OrderDetails" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_OrderDetails" PRIMARY KEY AUTOINCREMENT,
+          "OrderId" INTEGER NOT NULL,
+          "ProductId" INTEGER NOT NULL,
+          "Quantity" INTEGER NOT NULL,
+          CONSTRAINT "FK_OrderDetails_Orders_OrderId" FOREIGN KEY ("OrderId") REFERENCES "Orders" ("Id") ON DELETE CASCADE,
+          CONSTRAINT "FK_OrderDetails_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE CASCADE
+      );
+info: 11.03.2024 13:39:19.776 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "OrderDetails" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_OrderDetails" PRIMARY KEY AUTOINCREMENT,
+          "OrderId" INTEGER NOT NULL,
+          "ProductId" INTEGER NOT NULL,
+          "Quantity" INTEGER NOT NULL,
+          CONSTRAINT "FK_OrderDetails_Orders_OrderId" FOREIGN KEY ("OrderId") REFERENCES "Orders" ("Id") ON DELETE CASCADE,
+          CONSTRAINT "FK_OrderDetails_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE CASCADE
+      );
+dbug: 11.03.2024 13:39:19.776 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:19.776 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:19.777 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_OrderDetails_OrderId" ON "OrderDetails" ("OrderId");
+info: 11.03.2024 13:39:19.777 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_OrderDetails_OrderId" ON "OrderDetails" ("OrderId");
+dbug: 11.03.2024 13:39:19.777 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:19.777 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:19.777 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_OrderDetails_ProductId" ON "OrderDetails" ("ProductId");
+info: 11.03.2024 13:39:19.777 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_OrderDetails_ProductId" ON "OrderDetails" ("ProductId");
+dbug: 11.03.2024 13:39:19.777 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:19.777 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:19.777 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "ef_temp_Orders" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_Orders" PRIMARY KEY AUTOINCREMENT,
+          "CustomerId" INTEGER NOT NULL,
+          CONSTRAINT "FK_Orders_People_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "People" ("Customer_id") ON DELETE CASCADE
+      );
+info: 11.03.2024 13:39:19.777 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "ef_temp_Orders" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_Orders" PRIMARY KEY AUTOINCREMENT,
+          "CustomerId" INTEGER NOT NULL,
+          CONSTRAINT "FK_Orders_People_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "People" ("Customer_id") ON DELETE CASCADE
+      );
+dbug: 11.03.2024 13:39:19.777 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:19.777 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:19.801 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ef_temp_Orders" ("Id", "CustomerId")
+      SELECT "Id", "CustomerId"
+      FROM "Orders";
+info: 11.03.2024 13:39:19.801 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ef_temp_Orders" ("Id", "CustomerId")
+      SELECT "Id", "CustomerId"
+      FROM "Orders";
+dbug: 11.03.2024 13:39:19.801 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:19.801 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:19.801 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "ef_temp_People" (
+          "Customer_id" INTEGER NOT NULL CONSTRAINT "PK_People" PRIMARY KEY AUTOINCREMENT,
+          "Adress" TEXT NOT NULL,
+          "Name" TEXT NOT NULL,
+          "Phone" TEXT NOT NULL
+      );
+info: 11.03.2024 13:39:19.806 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "ef_temp_People" (
+          "Customer_id" INTEGER NOT NULL CONSTRAINT "PK_People" PRIMARY KEY AUTOINCREMENT,
+          "Adress" TEXT NOT NULL,
+          "Name" TEXT NOT NULL,
+          "Phone" TEXT NOT NULL
+      );
+dbug: 11.03.2024 13:39:19.806 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:19.807 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:19.807 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ef_temp_People" ("Customer_id", "Adress", "Name", "Phone")
+      SELECT "Customer_id", "Adress", "Name", "Phone"
+      FROM "People";
+info: 11.03.2024 13:39:19.807 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ef_temp_People" ("Customer_id", "Adress", "Name", "Phone")
+      SELECT "Customer_id", "Adress", "Name", "Phone"
+      FROM "People";
+dbug: 11.03.2024 13:39:19.808 RelationalEventId.TransactionCommitting[20210] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committing transaction.
+dbug: 11.03.2024 13:39:20.068 RelationalEventId.TransactionCommitted[20202] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committed transaction.
+dbug: 11.03.2024 13:39:20.069 RelationalEventId.TransactionDisposed[20204] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Disposing transaction.
+dbug: 11.03.2024 13:39:20.069 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:20.069 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:20.069 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      PRAGMA foreign_keys = 0;
+info: 11.03.2024 13:39:20.069 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      PRAGMA foreign_keys = 0;
+dbug: 11.03.2024 13:39:20.069 RelationalEventId.TransactionStarting[20209] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Beginning transaction with isolation level 'Unspecified'.
+dbug: 11.03.2024 13:39:20.069 RelationalEventId.TransactionStarted[20200] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Began transaction with isolation level 'Serializable'.
+dbug: 11.03.2024 13:39:20.069 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:20.069 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:20.069 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      DROP TABLE "Orders";
+info: 11.03.2024 13:39:20.069 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      DROP TABLE "Orders";
+dbug: 11.03.2024 13:39:20.069 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:20.069 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:20.069 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER TABLE "ef_temp_Orders" RENAME TO "Orders";
+info: 11.03.2024 13:39:20.070 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER TABLE "ef_temp_Orders" RENAME TO "Orders";
+dbug: 11.03.2024 13:39:20.070 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:20.070 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:20.070 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      DROP TABLE "People";
+info: 11.03.2024 13:39:20.070 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      DROP TABLE "People";
+dbug: 11.03.2024 13:39:20.070 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:20.070 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:20.070 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER TABLE "ef_temp_People" RENAME TO "People";
+info: 11.03.2024 13:39:20.071 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER TABLE "ef_temp_People" RENAME TO "People";
+dbug: 11.03.2024 13:39:20.071 RelationalEventId.TransactionCommitting[20210] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committing transaction.
+dbug: 11.03.2024 13:39:20.203 RelationalEventId.TransactionCommitted[20202] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committed transaction.
+dbug: 11.03.2024 13:39:20.203 RelationalEventId.TransactionDisposed[20204] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Disposing transaction.
+dbug: 11.03.2024 13:39:20.203 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:20.203 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:20.203 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      PRAGMA foreign_keys = 1;
+info: 11.03.2024 13:39:20.203 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      PRAGMA foreign_keys = 1;
+dbug: 11.03.2024 13:39:20.203 RelationalEventId.TransactionStarting[20209] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Beginning transaction with isolation level 'Unspecified'.
+dbug: 11.03.2024 13:39:20.203 RelationalEventId.TransactionStarted[20200] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Began transaction with isolation level 'Serializable'.
+dbug: 11.03.2024 13:39:20.203 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:20.203 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:20.203 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_Orders_CustomerId" ON "Orders" ("CustomerId");
+info: 11.03.2024 13:39:20.203 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_Orders_CustomerId" ON "Orders" ("CustomerId");
+dbug: 11.03.2024 13:39:20.203 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 11.03.2024 13:39:20.203 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 11.03.2024 13:39:20.203 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+      VALUES ('20240311113907_TablePeopleAndAddOrderIdAgain', '6.0.27');
+info: 11.03.2024 13:39:20.203 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+      VALUES ('20240311113907_TablePeopleAndAddOrderIdAgain', '6.0.27');
+dbug: 11.03.2024 13:39:20.203 RelationalEventId.TransactionCommitting[20210] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committing transaction.
+dbug: 11.03.2024 13:39:20.478 RelationalEventId.TransactionCommitted[20202] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committed transaction.
+dbug: 11.03.2024 13:39:20.478 RelationalEventId.TransactionDisposed[20204] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Disposing transaction.
+dbug: 11.03.2024 13:39:20.478 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:20.478 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'main' on server 'F:\Visual Studio\LiliaStudyGit\LiliaStudy\FirstDB\FirstDataBase.db'.
+dbug: 11.03.2024 13:39:20.483 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'Config' disposed.
