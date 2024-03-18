@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GYM.Infrastructure\GYM.Infrastructure.csproj" />
+    <ProjectReference Include="..\GYM.Interface.Repositories\GYM.Interface.Repositories.csproj" />
+    <ProjectReference Include="..\GYM.Models\GYM.Models.csproj" />
+  </ItemGroup>
+
+</Project>
