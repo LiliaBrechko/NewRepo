@@ -90,7 +90,7 @@ namespace FirstDB
                 List<Customer> customers = new List<Customer> {  Oksana, Denys, Dmytro, Pavlo, Svitlana, Vitaliy, Kateryna, Andriy };
                 config.Customers.AddRange(customers);
                 config.SaveChanges();   
-
+             
 
             }
         }
