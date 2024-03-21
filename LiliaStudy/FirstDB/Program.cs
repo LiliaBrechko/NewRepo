@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Diagnostics;
+using Repositories;
+using System;
+using System.Net;
 
 namespace FirstDB
 {
@@ -6,93 +9,135 @@ namespace FirstDB
     {
         static void Main(string[] args)
         {
-            using (Config config = new Config())
+            Repository<Product> repositoryProduct = new Repository<Product>();
+            Repository<Customer> repositoryCustomer = new Repository<Customer>();
+            Repository<Order> repositoryOrder = new Repository<Order>();
+            Repository<OrderDetails> repositoryOrderDetails = new Repository<OrderDetails>();
+            /*
+            Product Pizza = new Product()
             {
+                Name = "Pizza",
+                Price = 200
 
-                Product milk = new Product()
-                {
-                    Name = "Milk",
-                    Price = 40
+            };
+            Product Doner = new Product()
+            {
+                Name = "Doner",
+                Price = 100
 
-                };
-                Product bread = new Product()
-                {
-                    Name = "Bread",
-                    Price = 25
+            };
+            Product HotDog = new Product()
+            {
+                Name = "Hot Dog",
+                Price = 50
 
-                };
-                Product apple = new Product()
-                {
-                    Name = "Apple",
-                    Price = 30
+            };
+            Product Salad = new Product()
+            {
+                Name = "Salad",
+                Price = 90
 
-                };
+            };
+            Product Pasta = new Product()
+            {
+                Name = "Pasta",
+                Price = 120
 
-                List<Product> products = new List<Product> { milk, bread, apple };
+            };
+            Product FrenchFrie = new Product()
+            {
+                Name = "French Frie",
+                Price = 60
 
+            };
+            Product Nuggets = new Product()
+            {
+                Name = "Nuggets",
+                Price = 80
 
+            };
+            Product Sushi = new Product()
+            {
+                Name = "Sushi",
+                Price = 40
 
+            };
+            Product Burger = new Product()
+            {
+                Name = "Burger",
+                Price = 95
 
-                //add customers
-                Customer Oksana = new Customer()
-                {
-                    Name = "Oksana",
-                    Phone = "0978542715",
-                    Adress = "Bershad"
-                };
-                Customer Dmytro = new Customer()
-                {
-                    Name = "Dmytro",
-                    Phone = "0680126925",
-                    Adress = "Bershad"
-                };
-                Customer Denys = new Customer()
-                {
-                    Name = "Denys",
-                    Phone = "0938405093",
-                    Adress = "Kyiv"
-                };
-
-                Customer Svitlana = new Customer()
-                {
-                    Name = "Svitlana",
-                    Phone = "0673379165",
-                    Adress = "Rivne"
-                };
-
-                Customer Pavlo = new Customer()
-                {
-                    Name = "Pavlo",
-                    Phone = "0507563005",
-                    Adress = "Rivne"
-                };
-
-                Customer Vitaliy = new Customer()
-                {
-                    Name = "Vitaliy",
-                    Phone = "0638187970",
-                    Adress = "Rivne"
-                };
-                Customer Kateryna = new Customer()
-                {
-                    Name = "Kateryna",
-                    Phone = "0967445444",
-                    Adress = "Rivne"
-                };
-
-                Customer Andriy = new Customer()
-                {
-                    Name = "Andriy",
-                    Phone = "0688089639",
-                    Adress = "Bershad"
-                };
-
-                List<Customer> customers = new List<Customer> {  Oksana, Denys, Dmytro, Pavlo, Svitlana, Vitaliy, Kateryna, Andriy };
-                config.Customers.AddRange(customers);
-                config.SaveChanges();   
+            };
 
 
-            }
+            var burgerid = repositoryProduct.Create(Burger);
+            var pizzaid = repositoryProduct.Create(Pizza);
+            var pastaid = repositoryProduct.Create(Pasta);
+            var sushiid = repositoryProduct.Create(Sushi);
+            var frenchfrieid = repositoryProduct.Create(FrenchFrie);
+            var nuggetsid = repositoryProduct.Create(Nuggets);
+            var saladid = repositoryProduct.Create(Salad);
+            var donerid = repositoryProduct.Create(Doner);
+            var hotdogid = repositoryProduct.Create(HotDog);
+
+
+
+
+
+
+            //add customers
+            Customer Oksana = new Customer()
+            {
+                Name = "Oksana",
+                Phone = "0978542715",
+                Adress = "Bershad"
+            };
+            Customer Dmytro = new Customer()
+            {
+                Name = "Dmytro",
+                Phone = "0680126925",
+                Adress = "Bershad"
+            };
+
+            var oksanaid = repositoryCustomer.Create(Oksana);
+            var dmytroid = repositoryCustomer.Create(Dmytro);
+
+            Order order1 = new Order()
+            {
+                CustomerId = oksanaid
+
+            };
+
+            Order order2 = new Order()
+            {
+                CustomerId = dmytroid
+
+            };
+            var order1id = repositoryOrder.Create(order1);
+            var order2id = repositoryOrder.Create(order2);
+
+            OrderDetails orderDetails1 = new OrderDetails()
+            {
+                ProductId = pizzaid,
+                OrderId = order1id,
+            };
+
+
+            OrderDetails orderDetails2 = new OrderDetails()
+            {
+                ProductId = pastaid,
+                OrderId = order2id,
+            };
+
+
+            var orderdetails1ID = repositoryOrderDetails.Create(orderDetails1);
+            var orderdetails2ID = repositoryOrderDetails.Create(orderDetails2);
+
+
+            */
+
+            repositoryOrder.Delete(1);
+
         }
     }
 }

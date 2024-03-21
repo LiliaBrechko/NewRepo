@@ -2,17 +2,17 @@
 
 #nullable disable
 
-namespace FirstDB.Migrations
+namespace Infrastructure.DB.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Customers",
+                name: "People",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Customer_id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
                     Adress = table.Column<string>(type: "TEXT", nullable: false),
@@ -20,7 +20,7 @@ namespace FirstDB.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Customers", x => x.Id);
+                    table.PrimaryKey("PK_People", x => x.Customer_id);
                 });
 
             migrationBuilder.CreateTable(
@@ -49,10 +49,10 @@ namespace FirstDB.Migrations
                 {
                     table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Orders_Customers_CustomerId",
+                        name: "FK_Orders_People_CustomerId",
                         column: x => x.CustomerId,
-                        principalTable: "Customers",
-                        principalColumn: "Id",
+                        principalTable: "People",
+                        principalColumn: "Customer_id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -111,7 +111,7 @@ namespace FirstDB.Migrations
                 name: "Products");
 
             migrationBuilder.DropTable(
-                name: "Customers");
+                name: "People");
         }
     }
 }

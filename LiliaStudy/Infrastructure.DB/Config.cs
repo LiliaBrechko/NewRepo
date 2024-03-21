@@ -20,7 +20,7 @@ namespace FirstDB
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source = \"F:\\Visual Studio\\LiliaStudyGit\\LiliaStudy\\FirstDB\\FirstDataBase.db\"");
+            optionsBuilder.UseSqlite("Data Source = \"F:\\Visual Studio\\LiliaStudyGit\\LiliaStudy\\Infrastructure.DB\\FirstDataBase.db\"");
             optionsBuilder.LogTo(logStream.WriteLine);
         }
 

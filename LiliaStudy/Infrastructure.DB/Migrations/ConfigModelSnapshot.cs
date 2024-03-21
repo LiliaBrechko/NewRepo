@@ -2,18 +2,16 @@
 using FirstDB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace FirstDB.Migrations
+namespace Infrastructure.DB.Migrations
 {
     [DbContext(typeof(Config))]
-    [Migration("20240304120352_InitialCreate")]
-    partial class InitialCreate
+    partial class ConfigModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.27");
@@ -22,7 +20,8 @@ namespace FirstDB.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("Customer_id");
 
                     b.Property<string>("Adress")
                         .IsRequired()
@@ -38,7 +37,7 @@ namespace FirstDB.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customers");
+                    b.ToTable("People");
                 });
 
             modelBuilder.Entity("FirstDB.Order", b =>
