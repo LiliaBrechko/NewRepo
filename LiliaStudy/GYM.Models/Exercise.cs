@@ -15,6 +15,11 @@ namespace GYM.Models
 
         public bool IsActive { get; set; }
 
+        public int ProfileId { get; set; }
+
+        [ForeignKey(nameof(ProfileId))]
+        public Profile? Profile { get; set; }
+
         public virtual ICollection<Set>? Sets { get; set; }
     }
 }

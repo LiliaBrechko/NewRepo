@@ -3,6 +3,7 @@ using System;
 using GYM.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GYM.Infrastructure.Migrations
 {
     [DbContext(typeof(DBContextGym))]
-    partial class DBContextGymModelSnapshot : ModelSnapshot
+    [Migration("20240328141242_AddProfiles")]
+    partial class AddProfiles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.27");
@@ -60,11 +62,11 @@ namespace GYM.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProfileId");
-
-                    b.HasIndex("Name", "ProfileId")
+                    b.HasIndex("Name")
                         .IsUnique()
                         .HasDatabaseName("UX_GYM_EXERCISE");
+
+                    b.HasIndex("ProfileId");
 
                     b.ToTable("GYM_EXERCISE");
                 });

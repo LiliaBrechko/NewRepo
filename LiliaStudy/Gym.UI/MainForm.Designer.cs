@@ -31,11 +31,13 @@
             this.AddExerciseFormOpenButton = new System.Windows.Forms.Button();
             this.ViewEditTrainingSessionButton = new System.Windows.Forms.Button();
             this.ManageBodyWeightButton = new System.Windows.Forms.Button();
+            this.buttonManageProfiles = new System.Windows.Forms.Button();
+            this.comboBoxProfile = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // AddExerciseFormOpenButton
             // 
-            this.AddExerciseFormOpenButton.Location = new System.Drawing.Point(85, 31);
+            this.AddExerciseFormOpenButton.Location = new System.Drawing.Point(83, 84);
             this.AddExerciseFormOpenButton.Name = "AddExerciseFormOpenButton";
             this.AddExerciseFormOpenButton.Size = new System.Drawing.Size(134, 23);
             this.AddExerciseFormOpenButton.TabIndex = 0;
@@ -45,7 +47,7 @@
             // 
             // ViewEditTrainingSessionButton
             // 
-            this.ViewEditTrainingSessionButton.Location = new System.Drawing.Point(85, 60);
+            this.ViewEditTrainingSessionButton.Location = new System.Drawing.Point(83, 113);
             this.ViewEditTrainingSessionButton.Name = "ViewEditTrainingSessionButton";
             this.ViewEditTrainingSessionButton.Size = new System.Drawing.Size(134, 23);
             this.ViewEditTrainingSessionButton.TabIndex = 2;
@@ -55,7 +57,7 @@
             // 
             // ManageBodyWeightButton
             // 
-            this.ManageBodyWeightButton.Location = new System.Drawing.Point(85, 89);
+            this.ManageBodyWeightButton.Location = new System.Drawing.Point(83, 142);
             this.ManageBodyWeightButton.Name = "ManageBodyWeightButton";
             this.ManageBodyWeightButton.Size = new System.Drawing.Size(134, 23);
             this.ManageBodyWeightButton.TabIndex = 3;
@@ -63,17 +65,39 @@
             this.ManageBodyWeightButton.UseVisualStyleBackColor = true;
             this.ManageBodyWeightButton.Click += new System.EventHandler(this.ManageBodyWeightButton_Click);
             // 
+            // buttonManageProfiles
+            // 
+            this.buttonManageProfiles.Location = new System.Drawing.Point(83, 55);
+            this.buttonManageProfiles.Name = "buttonManageProfiles";
+            this.buttonManageProfiles.Size = new System.Drawing.Size(134, 23);
+            this.buttonManageProfiles.TabIndex = 4;
+            this.buttonManageProfiles.Text = "Manage Profiles";
+            this.buttonManageProfiles.UseVisualStyleBackColor = true;
+            this.buttonManageProfiles.Click += new System.EventHandler(this.buttonManageProfiles_Click);
+            // 
+            // comboBoxProfile
+            // 
+            this.comboBoxProfile.FormattingEnabled = true;
+            this.comboBoxProfile.Location = new System.Drawing.Point(83, 26);
+            this.comboBoxProfile.Name = "comboBoxProfile";
+            this.comboBoxProfile.Size = new System.Drawing.Size(134, 23);
+            this.comboBoxProfile.TabIndex = 5;
+            this.comboBoxProfile.SelectedIndexChanged += new System.EventHandler(this.comboBoxProfile_SelectedIndexChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 151);
+            this.ClientSize = new System.Drawing.Size(302, 197);
+            this.Controls.Add(this.comboBoxProfile);
+            this.Controls.Add(this.buttonManageProfiles);
             this.Controls.Add(this.ManageBodyWeightButton);
             this.Controls.Add(this.ViewEditTrainingSessionButton);
             this.Controls.Add(this.AddExerciseFormOpenButton);
             this.Name = "MainForm";
             this.Text = "GYM";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -83,5 +107,7 @@
         private Button AddExerciseFormOpenButton;
         private Button ViewEditTrainingSessionButton;
         private Button ManageBodyWeightButton;
+        private Button buttonManageProfiles;
+        private ComboBox comboBoxProfile;
     }
 }

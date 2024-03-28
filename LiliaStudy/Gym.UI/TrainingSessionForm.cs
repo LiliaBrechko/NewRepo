@@ -26,7 +26,7 @@ namespace Gym.UI
         {
             try
             {
-                exercisesCache = exerciseService.GetAllExercises().ToDictionary(k => k.Name, v => v.Id);
+                exercisesCache = exerciseService.GetAllExercises().Where(e => e.ProfileId == Profile.Current).ToDictionary(k => k.Name, v => v.Id);
 
                 ExerciseCombobox.Items.Clear();
                 ExerciseCombobox.Items.AddRange(exercisesCache.Select(e => e.Key).ToArray());
@@ -130,7 +130,7 @@ namespace Gym.UI
         {
             try
             {
-                var sessionId = trainingSessionService.AddTrainingSession(sets.Select(set => new CreateSetDto
+                var sessionId = trainingSessionService.AddTrainingSession(Profile.Current, sets.Select(set => new CreateSetDto
                 {
                     ExerciseId = set.ExerciseId,
                     Reps = set.Reps,

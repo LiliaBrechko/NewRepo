@@ -6,6 +6,8 @@ namespace GYM.Interface.Services.TrainingSessions.Dto
     {
         public int Id { get; set; }
 
+        public int ProfileId { get; set; }
+
         public DateTimeOffset DateTime { get; set; }
 
         public IEnumerable<SetCard> Sets { get; set; } = Array.Empty<SetCard>();

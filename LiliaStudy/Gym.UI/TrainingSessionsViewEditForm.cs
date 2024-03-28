@@ -35,7 +35,7 @@ namespace Gym.UI
         {
             try
             {
-                IEnumerable<ExerciseLastDateDto> exercises = exerciseService.GetAllExercisesWithLastDates().OrderByDescending(x => x.IsActive).ThenBy(d => d.LastDateTime).ToList();
+                IEnumerable<ExerciseLastDateDto> exercises = exerciseService.GetAllExercisesWithLastDates().Where(e => e.ProfileId == Profile.Current).OrderByDescending(x => x.IsActive).ThenBy(d => d.LastDateTime).ToList();
 
                 ExerciseCombobox.DataSource = exercises;
 
@@ -60,7 +60,7 @@ namespace Gym.UI
                 {
                     e.Value = $"{item.Name}";
 
-                    if(lastDate == null || lastDate == default(DateTimeOffset))
+                    if (lastDate == null || lastDate == default(DateTimeOffset))
                     {
                         e.Value += " (no attempts)";
                     }
@@ -93,6 +93,8 @@ namespace Gym.UI
                 RefreshExerciseCombobox();
 
                 RefreshTrainingSessionListBoxDatesView();
+
+                TrainingSessionListBoxDatesView.SelectedIndex = TrainingSessionListBoxDatesView.Items.Count - 1;
             }
             catch (Exception ex)
             {
@@ -106,7 +108,7 @@ namespace Gym.UI
             {
                 var selectedItemIndex = TrainingSessionListBoxDatesView.SelectedIndex;
 
-                var sessions = trainingSessionService.GetAllTrainingSessions().OrderBy(s => s.DateTime).ToList();
+                var sessions = trainingSessionService.GetAllTrainingSessions().Where(t => t.ProfileId == Profile.Current).OrderBy(s => s.DateTime).ToList();
 
                 TrainingSessionListBoxDatesView.DataSource = sessions;
 
@@ -229,11 +231,17 @@ namespace Gym.UI
                                 // Set the brush to the current part's color
                                 if (i > 0)
                                 {
-                                    brush.Color = difference.Days > 6
-                                        ? Color.Red
-                                        : difference.Days > 3
-                                            ? Color.Goldenrod
-                                            : Color.Green;
+                                    brush.Color = difference.Days > 8
+                                        ? Color.Green
+                                        : difference.Days > 6
+                                            ? Color.DarkOrange
+                                            : Color.Red;
+
+                                    //brush.Color = difference.Days > 6
+                                    //    ? Color.Red
+                                    //    : difference.Days > 3
+                                    //        ? Color.Goldenrod
+                                    //        : Color.Green;
                                     currentFont = boldFont;
                                 }
 
@@ -278,9 +286,9 @@ namespace Gym.UI
             {
                 var date = TrainingSessionDateTimePicker.Value;
 
-                var sessionId = ((TrainingSessionCard)TrainingSessionListBoxDatesView.SelectedItem).Id;
+                var sessionId = ((TrainingSessionCard)TrainingSessionListBoxDatesView.SelectedItem)?.Id ?? throw new ApplicationException("Nothing to update");
 
-                trainingSessionService.UpdateTrainingSession(sessionId, null, date);
+                trainingSessionService.UpdateTrainingSession(sessionId, Profile.Current, null, date);
 
                 RefreshTrainingSessionListBoxDatesView();
             }
@@ -310,7 +318,7 @@ namespace Gym.UI
         {
             try
             {
-                var updateSets = ((IEnumerable<SetCard>)TrainingSessionListBoxView.DataSource).Select(s => new CreateSetDto
+                var updateSets = (((IEnumerable<SetCard>?)TrainingSessionListBoxView.DataSource) ?? throw new ApplicationException("No training selected.")).Select(s => new CreateSetDto
                 {
                     Reps = s.Reps,
                     Weight = s.Weight,
@@ -326,13 +334,20 @@ namespace Gym.UI
                     TrainingSessionId = ((TrainingSessionCard)TrainingSessionListBoxDatesView.SelectedItem).Id,
                 });
 
-                trainingSessionService.UpdateTrainingSession(((TrainingSessionCard)TrainingSessionListBoxDatesView.SelectedItem).Id, updateSets);
+                trainingSessionService.UpdateTrainingSession(((TrainingSessionCard)TrainingSessionListBoxDatesView.SelectedItem).Id, Profile.Current, updateSets);
 
                 var sets = setService.GetAllSets().Where(s => s.TrainingSessionId == ((TrainingSessionCard)TrainingSessionListBoxDatesView.SelectedItem).Id).ToList();
 
                 RefreshExerciseCombobox();
 
                 RefreshTrainingSessionListBoxView(sets, sets.Count - 1);
+            }
+            catch (System.FormatException ex)
+            {
+                var message = ex.Message;
+                message += "\nPlease check that Reps are set as integer number and Weight is set as decimal number";
+
+                MessageBox.Show(message, "Error!");
             }
             catch (Exception ex)
             {
@@ -346,7 +361,7 @@ namespace Gym.UI
             {
                 var newSelectedItemIndex = TrainingSessionListBoxView.SelectedIndex - 1;
 
-                var itemToRemove = (SetCard)TrainingSessionListBoxView.SelectedItem;
+                var itemToRemove = (SetCard)TrainingSessionListBoxView.SelectedItem ?? throw new ApplicationException("Nothing to remove");
 
                 var updateSets = ((IEnumerable<SetCard>)TrainingSessionListBoxView.DataSource).Where(item => item.Id != itemToRemove.Id).Select(s => new CreateSetDto
                 {
@@ -356,7 +371,7 @@ namespace Gym.UI
                     TrainingSessionId = s.TrainingSessionId,
                 }).ToList();
 
-                trainingSessionService.UpdateTrainingSession(((TrainingSessionCard)TrainingSessionListBoxDatesView.SelectedItem).Id, updateSets);
+                trainingSessionService.UpdateTrainingSession(((TrainingSessionCard)TrainingSessionListBoxDatesView.SelectedItem).Id, Profile.Current, updateSets);
 
                 var sets = setService.GetAllSets().Where(s => s.TrainingSessionId == ((TrainingSessionCard)TrainingSessionListBoxDatesView.SelectedItem).Id).ToList();
 
@@ -374,11 +389,11 @@ namespace Gym.UI
         {
             try
             {
-                var item = (SetCard)TrainingSessionListBoxView.SelectedItem;
+                var item = (SetCard)TrainingSessionListBoxView.SelectedItem ?? throw new ApplicationException("Nothing to update");
 
                 var newExerciseId = ((ExerciseLastDateDto?)ExerciseCombobox.SelectedItem)?.Id ?? throw new ApplicationException("No exercise selected");
 
-                var newWeight = int.Parse(ExerciseWeightTextBox.Text);
+                var newWeight = double.Parse(ExerciseWeightTextBox.Text);
 
                 var newReps = int.Parse(ExerciseRepsTextBox.Text);
 
@@ -406,12 +421,12 @@ namespace Gym.UI
         {
             try
             {
-                if (trainingSessionService.GetAllTrainingSessions().Any(s => s.DateTime.Date == DateTime.Now.Date))
+                if (trainingSessionService.GetAllTrainingSessions().Where(s => s.ProfileId == Profile.Current).Any(s => s.DateTime.Date == DateTime.Now.Date))
                 {
                     throw new ApplicationException("Training session for this date already exists.");
                 }
 
-                trainingSessionService.AddTrainingSession();
+                trainingSessionService.AddTrainingSession(Profile.Current);
 
                 RefreshTrainingSessionListBoxDatesView();
             }
@@ -425,7 +440,7 @@ namespace Gym.UI
         {
             try
             {
-                var card = (TrainingSessionCard)TrainingSessionListBoxDatesView.SelectedItem;
+                var card = (TrainingSessionCard)TrainingSessionListBoxDatesView.SelectedItem ?? throw new ApplicationException("Nothing to Remove"); ;
 
                 trainingSessionService.DeleteTrainingSession(card.Id);
 
@@ -442,7 +457,7 @@ namespace Gym.UI
             try
             {
                 var exerciseId = ((ExerciseLastDateDto?)ExerciseCombobox.SelectedItem)?.Id ?? throw new ApplicationException("No exercise selected");
-                var currentDateTime = ((TrainingSessionCard)TrainingSessionListBoxDatesView.SelectedItem).DateTime;
+                var currentDateTime = ((TrainingSessionCard)TrainingSessionListBoxDatesView.SelectedItem)?.DateTime ?? throw new ApplicationException("Nothing to compare with");
 
                 var dateInfos = setService.GetSetDateInfos().Where(s => s.ExerciseId == exerciseId).GroupBy(s => s.TrainingSessionDate).OrderBy(s => s.Key);
 
@@ -454,7 +469,7 @@ namespace Gym.UI
 
                 if (currentDateInfos != null && currentDateInfos.Any())
                 {
-                    currentInfo += "Current:";
+                    currentInfo += $"Current: {currentDateTime.Date.ToShortDateString()}";
                     foreach (var currentDateInfo in currentDateInfos)
                     {
                         currentInfo += Environment.NewLine;
@@ -465,7 +480,7 @@ namespace Gym.UI
 
                 if (previousDateInfos != null && previousDateInfos.Any())
                 {
-                    currentInfo += "Previous:";
+                    currentInfo += $"Previous: {previousDateInfos.First().TrainingSessionDate.Date.ToShortDateString()}";
                     foreach (var previousDateInfo in previousDateInfos)
                     {
                         currentInfo += Environment.NewLine;
@@ -473,7 +488,23 @@ namespace Gym.UI
                     }
                 }
 
-                MessageBox.Show(currentInfo);
+                MessageBox.Show(!String.IsNullOrEmpty(currentInfo) ? currentInfo : throw new ApplicationException("Nothing to compare with"));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!");
+            }
+        }
+
+        private void buttonDetail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var exerciseId = ((ExerciseLastDateDto?)ExerciseCombobox.SelectedItem)?.Id ?? throw new ApplicationException("No exercise selected");
+                var description = exerciseService.GetExercise(exerciseId).Description;
+                
+
+                MessageBox.Show(description);
             }
             catch (Exception ex)
             {

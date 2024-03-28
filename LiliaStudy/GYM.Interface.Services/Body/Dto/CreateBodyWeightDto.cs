@@ -11,5 +11,7 @@ namespace GYM.Interface.Services.Body.Dto
         public DateTimeOffset DateTime { get; set; }
 
         public double Weight { get; set; }
+
+        public int ProfileId { get; set; }
     }
 }

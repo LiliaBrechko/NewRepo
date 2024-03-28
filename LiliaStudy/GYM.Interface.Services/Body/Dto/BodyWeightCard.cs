@@ -10,6 +10,8 @@ namespace GYM.Interface.Services.Body.Dto
     {
         public int Id { get; set; }
 
+        public int ProfileId { get; set; }
+
         public DateTimeOffset DateTime { get; set; }
 
         public double Weight { get; set; }

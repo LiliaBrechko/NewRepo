@@ -18,7 +18,7 @@ namespace GYM.Services
 
         public int AddExercise(CreateExerciseDto createExerciseDto)
         {
-            var existing = repository.GetAll().FirstOrDefault(e => e.Name == createExerciseDto.Name);
+            var existing = repository.GetAll().FirstOrDefault(e => e.Name == createExerciseDto.Name && e.ProfileId == Profile.Current);
 
             if (existing != null)
             {
@@ -29,7 +29,8 @@ namespace GYM.Services
             {
                 Name = createExerciseDto.Name,
                 Description = createExerciseDto.Description,
-                IsActive = createExerciseDto.IsActive
+                IsActive = createExerciseDto.IsActive,
+                ProfileId = createExerciseDto.ProfileId
             });
         }
 
@@ -59,7 +60,8 @@ namespace GYM.Services
             {
                 Id = e.Id,
                 Name = e.Name,
-                IsActive = e.IsActive
+                IsActive = e.IsActive,
+                ProfileId = e.ProfileId
             }).ToArray();
         }
 
@@ -73,7 +75,8 @@ namespace GYM.Services
                 Id = e.Exercise.Id,
                 Name = e.Exercise.Name,
                 LastDateTime = e.TrainingSessionDates.OrderByDescending(t => t).FirstOrDefault(),
-                IsActive = e.Exercise.IsActive
+                IsActive = e.Exercise.IsActive,
+                ProfileId = e.Exercise.ProfileId
             });
         }
 
@@ -86,18 +89,27 @@ namespace GYM.Services
                 Id = exercise.Id,
                 Name = exercise.Name,
                 Description = exercise.Description,
-                IsActive = exercise.IsActive
+                IsActive = exercise.IsActive,
+                ProfileId = exercise.ProfileId
             };
         }
 
         public void UpdateExercise(int id, CreateExerciseDto createExerciseDto)
         {
+            var existing = repository.GetAll().FirstOrDefault(e => e.Name == createExerciseDto.Name && id != e.Id && e.ProfileId == Profile.Current);
+
+            if (existing != null)
+            {
+                throw new ApplicationException($"{typeof(Exercise).Name} with name '{createExerciseDto.Name}' already exists");
+            }
+
             repository.Update(id, new Exercise
             {
                 Id = id,
                 Name = createExerciseDto.Name,
                 Description = createExerciseDto.Description,
-                IsActive = createExerciseDto.IsActive
+                IsActive = createExerciseDto.IsActive,
+                ProfileId = createExerciseDto.ProfileId
             });
         }
     }

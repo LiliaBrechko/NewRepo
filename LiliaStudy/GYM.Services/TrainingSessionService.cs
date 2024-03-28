@@ -24,11 +24,12 @@ namespace GYM.Services
             this.setService = setService;
         }
 
-        public int AddTrainingSession(IEnumerable<CreateSetDto>? sets = null, DateTimeOffset? dateTimeOffset = null)
+        public int AddTrainingSession(int profileId, IEnumerable<CreateSetDto>? sets = null, DateTimeOffset? dateTimeOffset = null)
         {
             var sessionId = repository.Create(new TrainingSession
             {
-                DateTime = dateTimeOffset ?? DateTimeOffset.Now
+                DateTime = dateTimeOffset ?? DateTimeOffset.Now,
+                ProfileId = profileId
             });
 
             if (sets != null)
@@ -55,8 +56,9 @@ namespace GYM.Services
             return sessions.Select(e => new TrainingSessionCard
             {
                 Id = e.Id,
+                ProfileId = e.ProfileId,
                 DateTime = e.DateTime,
-                Sets = e.Sets!.Select(s=> new SetCard
+                Sets = e.Sets!.Select(s => new SetCard
                 {
                     ExerciseId = s.ExerciseId,
                     ExerciseName = s.Exercise!.Name,
@@ -76,6 +78,7 @@ namespace GYM.Services
             return new TrainingSessionCard
             {
                 Id = session.Id,
+                ProfileId = session.ProfileId,
                 DateTime = session.DateTime,
                 Sets = session.Sets!.Select(s => new SetCard
                 {
@@ -90,14 +93,15 @@ namespace GYM.Services
             };
         }
 
-        public void UpdateTrainingSession(int id, IEnumerable<CreateSetDto>? sets = null, DateTimeOffset? dateTimeOffset = null)
+        public void UpdateTrainingSession(int id, int profileId, IEnumerable<CreateSetDto>? sets = null, DateTimeOffset? dateTimeOffset = null)
         {
             if (dateTimeOffset != null)
             {
                 repository.Update(id, new TrainingSession
                 {
                     Id = id,
-                    DateTime = dateTimeOffset.Value
+                    DateTime = dateTimeOffset.Value,
+                    ProfileId = profileId
                 });
             }
 

@@ -201,7 +201,7 @@ namespace Gym.UI
         {
             try
             {
-                bodyWeightCache = bodyWeightService.GetAllBodyWeights().ToDictionary(k => k.Id, v => v);
+                bodyWeightCache = bodyWeightService.GetAllBodyWeights().Where(b => b.ProfileId == Profile.Current).ToDictionary(k => k.Id, v => v);
                 ListBoxViewBodyWeightDates.DataSource = bodyWeightCache.Select(i => i).OrderBy(i => i.Value.DateTime).ToList();
 
                 ListBoxViewBodyWeightDates.DrawMode = DrawMode.OwnerDrawFixed; // Set the DrawMode
@@ -217,7 +217,7 @@ namespace Gym.UI
         {
             try
             {
-                var itemToRemove = (KeyValuePair<int, BodyWeightCard>)ListBoxViewBodyWeightDates.SelectedItem;
+                var itemToRemove = (KeyValuePair<int, BodyWeightCard>?)ListBoxViewBodyWeightDates.SelectedItem ?? throw new ApplicationException("Nothing to remove");
 
                 bodyWeightService.DeleteBodyWeight(itemToRemove.Key);
 
@@ -236,10 +236,18 @@ namespace Gym.UI
                 var newWeight = bodyWeightService.AddBodyWeight(new CreateBodyWeightDto
                 {
                     Weight = double.Parse(TextBoxWeight.Text),
-                    DateTime = DateTimePickerWeight.Value
+                    DateTime = DateTime.Now,
+                    ProfileId = Profile.Current
                 });
 
                 RefreshWeightCache();
+            }
+            catch (System.FormatException ex)
+            {
+                var message = ex.Message;
+                message += "\nPlease check that Weight is set as decimal number";
+
+                MessageBox.Show(message, "Error!");
             }
             catch (Exception ex)
             {
@@ -251,15 +259,23 @@ namespace Gym.UI
         {
             try
             {
-                var current = (KeyValuePair<int, BodyWeightCard>)ListBoxViewBodyWeightDates.SelectedItem;
+                var current = (KeyValuePair<int, BodyWeightCard>?)ListBoxViewBodyWeightDates.SelectedItem ?? throw new ApplicationException("Nothing to udpate");
 
                 bodyWeightService.UpdateBodyWeight(current.Key, new CreateBodyWeightDto
                 {
                     Weight = double.Parse(TextBoxWeight.Text),
-                    DateTime = DateTimePickerWeight.Value
+                    DateTime = DateTimePickerWeight.Value,
+                    ProfileId = Profile.Current
                 });
 
                 RefreshWeightCache();
+            }
+            catch (System.FormatException ex)
+            {
+                var message = ex.Message;
+                message += "\nPlease check that Weight is set as decimal number";
+
+                MessageBox.Show(message, "Error!");
             }
             catch (Exception ex)
             {

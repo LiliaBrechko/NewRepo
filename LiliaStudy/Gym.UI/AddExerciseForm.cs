@@ -20,11 +20,17 @@ namespace Gym.UI
         {
             try
             {
+                if (string.IsNullOrEmpty(AddExerciseNameTextBox.Text.Trim()))
+                {
+                    throw new ApplicationException("Please enter exercise name");
+                }
+
                 var exercise = new CreateExerciseDto
                 {
                     Name = AddExerciseNameTextBox.Text,
                     Description = AddExerciseDescriptionTextBox.Text,
-                    IsActive = checkBoxIsActive.Checked
+                    IsActive = checkBoxIsActive.Checked,
+                    ProfileId = Profile.Current
                 };
 
                 var exerciseService = new ExerciseService(new Repository<Exercise>(), new Repository<TrainingSession>());
@@ -48,8 +54,9 @@ namespace Gym.UI
         {
             try
             {
+                ExerciseComboBox.Text = String.Empty;
                 var newIndex = index ?? ExerciseComboBox.SelectedIndex;
-                exercisesCache = exerciseService.GetAllExercises().ToDictionary(k => k.Name, v => v.Id);
+                exercisesCache = exerciseService.GetAllExercises().Where(e => e.ProfileId == Profile.Current).ToDictionary(k => k.Name, v => v.Id);
 
                 ExerciseComboBox.DataSource = exercisesCache.Select(e => e.Key).ToArray();
 
@@ -67,23 +74,52 @@ namespace Gym.UI
 
         private void RemoveExerciseButton_Click(object sender, EventArgs e)
         {
-            var index = ExerciseComboBox.SelectedIndex;
+            try
+            {
+                AddExerciseNameTextBox.Text = string.Empty;
+                AddExerciseDescriptionTextBox.Text = string.Empty;
+                checkBoxIsActive.Checked = true;
 
-            exerciseService.DeleteExercise(exercisesCache[ExerciseComboBox.SelectedItem.ToString()!]);
+                var index = ExerciseComboBox.SelectedIndex;
 
-            RefreshExercisesCache(index - 1);
+                if (index == -1)
+                {
+                    throw new ApplicationException("Nothing to remove");
+                }
+
+                exerciseService.DeleteExercise(exercisesCache[ExerciseComboBox.SelectedItem.ToString()!]);
+
+                RefreshExercisesCache(index - 1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!");
+            }
         }
 
         private void UpdateExerciseButton_Click(object sender, EventArgs e)
         {
-            exerciseService.UpdateExercise(exercisesCache[ExerciseComboBox.SelectedItem.ToString()!], new CreateExerciseDto
+            try
             {
-                Name = AddExerciseNameTextBox.Text,
-                Description = AddExerciseDescriptionTextBox.Text,
-                IsActive = checkBoxIsActive.Checked
-            });
+                if (ExerciseComboBox.SelectedItem == null || ExerciseComboBox.SelectedIndex == -1)
+                {
+                    throw new ApplicationException("Nothing to update");
+                }
 
-            RefreshExercisesCache();
+                exerciseService.UpdateExercise(exercisesCache[ExerciseComboBox.SelectedItem.ToString()!], new CreateExerciseDto
+                {
+                    Name = AddExerciseNameTextBox.Text,
+                    Description = AddExerciseDescriptionTextBox.Text,
+                    IsActive = checkBoxIsActive.Checked,
+                    ProfileId = Profile.Current
+                });
+
+                RefreshExercisesCache();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!");
+            }
         }
 
         private void ExerciseComboBox_SelectedIndexChanged(object sender, EventArgs e)

@@ -9,6 +9,11 @@ namespace GYM.Models
         [Key]
         public int Id { get; set; }
 
+        public int ProfileId { get; set; }
+
+        [ForeignKey(nameof(ProfileId))]
+        public Profile? Profile { get; set; }
+
         public DateTimeOffset DateTime { get; set; }
 
         public virtual ICollection<Set>? Sets { get; set; }

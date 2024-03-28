@@ -19,7 +19,8 @@ namespace GYM.Services
             return repository.Create(new BodyWeight
             {
                 DateTime = createBodyWeightDto.DateTime,
-                Weight = createBodyWeightDto.Weight
+                Weight = createBodyWeightDto.Weight,
+                ProfileId = createBodyWeightDto.ProfileId
             });
         }
 
@@ -36,7 +37,8 @@ namespace GYM.Services
             {
                 Id = e.Id,
                 DateTime = e.DateTime,
-                Weight = e.Weight
+                Weight = e.Weight,
+                ProfileId = e.ProfileId
             }).ToArray();
         }
 
@@ -48,7 +50,8 @@ namespace GYM.Services
             {
                 Id = bodyWeight.Id,
                 DateTime = bodyWeight.DateTime,
-                Weight = bodyWeight.Weight
+                Weight = bodyWeight.Weight,
+                ProfileId = bodyWeight.ProfileId
             };
         }
 
@@ -58,7 +61,8 @@ namespace GYM.Services
             {
                 Id = id,
                 DateTime = createBodyWeightDto.DateTime,
-                Weight = createBodyWeightDto.Weight
+                Weight = createBodyWeightDto.Weight,
+                ProfileId = createBodyWeightDto.ProfileId
             });
         }
     }

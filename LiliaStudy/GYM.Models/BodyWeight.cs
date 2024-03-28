@@ -7,6 +7,11 @@ namespace GYM.Models
     {
         public int Id { get; set; }
 
+        public int ProfileId { get; set; }
+
+        [ForeignKey(nameof(ProfileId))]
+        public Profile? Profile { get; set; }
+
         public DateTimeOffset DateTime { get; set; }
 
         public double Weight { get; set; }

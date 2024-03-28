@@ -3,6 +3,7 @@ using System;
 using GYM.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GYM.Infrastructure.Migrations
 {
     [DbContext(typeof(DBContextGym))]
-    partial class DBContextGymModelSnapshot : ModelSnapshot
+    [Migration("20240405144047_UpdateExerciseIndex")]
+    partial class UpdateExerciseIndex
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.27");
