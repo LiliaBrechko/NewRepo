@@ -21,4 +21,13 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure.DB\Infrastructure.DB.csproj" />
+    <ProjectReference Include="..\Interface.Repository\Interface.Repository.csproj" />
+    <ProjectReference Include="..\Interface.Services\Interface.Services.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\Repository\Repository.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
+  </ItemGroup>
+
 </Project>

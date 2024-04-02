@@ -15,6 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{25C5E86E-B527-40D0-915F-C9E720A9C812}"
 	ProjectSection(ProjectDependencies) = postProject
+		{93D45A14-2AFF-4C78-80D5-400A291AB3F0} = {93D45A14-2AFF-4C78-80D5-400A291AB3F0}
 		{C4B77308-E1AF-4298-BF63-886F07B755FD} = {C4B77308-E1AF-4298-BF63-886F07B755FD}
 	EndProjectSection
 EndProject

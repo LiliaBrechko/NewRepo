@@ -14,12 +14,26 @@ namespace Infrastructure.DB
     {
         public DbSet<LibraryUser> Users { get; set; } = null!;
         public DbSet<Book> Books { get; set; } = null!;
+        public DbSet<BookHistory> BookHistories {  get; set; } = null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").SetBasePath(Directory.GetCurrentDirectory()).Build();
             optionsBuilder.UseSqlite(config.GetConnectionString("DefaultConnection"));
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<BookHistory>().HasKey(x => new { x.UserID, x.BookID });
 
+            modelBuilder.Entity<BookHistory>()
+                .HasOne(x => x.Book)
+                .WithMany(x => x.BookHistories)
+                .HasForeignKey(x => x.BookID);
+
+            modelBuilder.Entity<BookHistory>()
+               .HasOne(x => x.LibraryUser)
+               .WithMany(x => x.BookHistories)
+               .HasForeignKey(x => x.UserID);
+        }
 
     }
 }

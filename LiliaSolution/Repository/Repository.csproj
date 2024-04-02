@@ -20,4 +20,9 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure.DB\Infrastructure.DB.csproj" />
+    <ProjectReference Include="..\Interface.Repository\Interface.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
