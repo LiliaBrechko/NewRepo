@@ -30,7 +30,7 @@ namespace Services
                 book.IsAvailable = false;
                 BookRepository.Update(book.Id, book);
                 var bookhistory = new BookHistory() {UserID = userid, BookID = book.Id, GetDate = DateTime.Now, ReturnDate = null };
-
+                BookHistoryRepository.Create(bookhistory);
             }
             
            
@@ -43,7 +43,7 @@ namespace Services
             {
                 book.IsAvailable = true;
                 BookRepository.Update(book.Id, book);
-                var bookhistoryreturn = BookHistoryRepository.GetAll().Where(x=>x.UserID == userid && bookIDs.Contains(x.Id) 
+                var bookhistoryreturn = BookHistoryRepository.GetAll().Where(x=>x.UserID == userid && bookIDs.Contains(x.BookID) 
                 && x.ReturnDate == null);
                 foreach(var returnbook  in bookhistoryreturn)
                 {
