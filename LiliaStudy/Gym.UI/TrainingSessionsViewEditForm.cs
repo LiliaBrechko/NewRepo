@@ -1,4 +1,5 @@
-﻿using GYM.Interface.Services.Body.Dto;
+﻿using GYM.Interface.Services.Body;
+using GYM.Interface.Services.Body.Dto;
 using GYM.Interface.Services.Exercises;
 using GYM.Interface.Services.Exercises.Dto;
 using GYM.Interface.Services.Sets;
@@ -8,15 +9,18 @@ using GYM.Interface.Services.TrainingSessions.Dto;
 using GYM.Models;
 using GYM.Repositories;
 using GYM.Services;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LicenseContext = OfficeOpenXml.LicenseContext;
 
 namespace Gym.UI
 {
@@ -25,6 +29,7 @@ namespace Gym.UI
         private readonly ITrainingSessionService trainingSessionService = new TrainingSessionService(new TrainingSessionRepository(), new SetService(new Repository<Set>()));
         private readonly ISetService setService = new SetService(new Repository<Set>());
         private readonly IExerciseService exerciseService = new ExerciseService(new Repository<Exercise>(), new Repository<TrainingSession>());
+        private readonly IBodyWeightService bodyWeightService = new BodyWeightService(new Repository<BodyWeight>());
 
         public TrainingSessionsViewEditForm()
         {
@@ -502,9 +507,65 @@ namespace Gym.UI
             {
                 var exerciseId = ((ExerciseLastDateDto?)ExerciseCombobox.SelectedItem)?.Id ?? throw new ApplicationException("No exercise selected");
                 var description = exerciseService.GetExercise(exerciseId).Description;
-                
+
 
                 MessageBox.Show(description);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!");
+            }
+        }
+
+        private void buttonExportToExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+                var exercise = ((ExerciseLastDateDto?)ExerciseCombobox.SelectedItem) ?? throw new ApplicationException("No exercise selected");
+                var exerciseId = exercise.Id;
+                var exerciseName = exercise.Name;
+
+                var weights = bodyWeightService.GetAllBodyWeights().Where(x => x.ProfileId == Profile.Current).ToDictionary(x => x.DateTime.Date, x => x.Weight);
+
+                var sets = setService.GetSetDateInfos().Where(s => s.ExerciseId == exerciseId).ToLookup(x => x.TrainingSessionDate.Date, x => new { x.Weight, x.Reps });
+
+                using (ExcelPackage package = new ExcelPackage())
+                {
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets.Add($"{exerciseName} Results");
+
+                    var i = 1;
+                    foreach (var set in sets)
+                    {
+                        // Set headers.
+                        var date = set.Key;
+
+                        if (!weights.ContainsKey(date))
+                        {
+                            continue;
+                        }
+
+                        var weight = weights[date];
+
+                        worksheet.Cells[1, i].Value = date.ToShortDateString();
+                        worksheet.Cells[2, i].Value = weight;
+                        worksheet.Column(i).Width = 20;
+
+                        var row = 3;
+
+                        foreach (var s in set)
+                        {
+                            worksheet.Cells[row, i].Value = $"Weight: {s.Weight}, Reps: {s.Reps}";
+                            row++;
+                        }
+
+                        i++;
+                    }
+
+                    FileInfo excelFile = new FileInfo("output.xlsx");
+                    package.SaveAs(excelFile);
+                }
             }
             catch (Exception ex)
             {

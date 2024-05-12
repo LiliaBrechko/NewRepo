@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GYM.Models\GYM.Models.csproj" />
     <ProjectReference Include="..\GYM.Repositories\GYM.Repositories.csproj" />
     <ProjectReference Include="..\GYM.Services\GYM.Services.csproj" />

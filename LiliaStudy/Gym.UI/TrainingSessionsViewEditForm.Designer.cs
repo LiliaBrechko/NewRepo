@@ -42,6 +42,7 @@
             buttonRemoveTrainingSession = new Button();
             buttonViewPrevious = new Button();
             buttonDetail = new Button();
+            buttonExportToExcel = new Button();
             SuspendLayout();
             // 
             // TrainingSessionListBoxView
@@ -176,11 +177,22 @@
             buttonDetail.UseVisualStyleBackColor = true;
             buttonDetail.Click += buttonDetail_Click;
             // 
+            // buttonExportToExcel
+            // 
+            buttonExportToExcel.Location = new Point(697, 69);
+            buttonExportToExcel.Name = "buttonExportToExcel";
+            buttonExportToExcel.Size = new Size(184, 23);
+            buttonExportToExcel.TabIndex = 19;
+            buttonExportToExcel.Text = "Export to Excel";
+            buttonExportToExcel.UseVisualStyleBackColor = true;
+            buttonExportToExcel.Click += buttonExportToExcel_Click;
+            // 
             // TrainingSessionsViewEditForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(893, 515);
+            Controls.Add(buttonExportToExcel);
             Controls.Add(buttonDetail);
             Controls.Add(buttonViewPrevious);
             Controls.Add(buttonRemoveTrainingSession);
@@ -218,5 +230,6 @@
         private Button buttonRemoveTrainingSession;
         private Button buttonViewPrevious;
         private Button buttonDetail;
+        private Button buttonExportToExcel;
     }
 }
