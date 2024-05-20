@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CaloriesCalculator.Models
 {
-    public enum Gender 
+    public interface IEntity
     {
-        Male,
-        Female
+        int Id { get; set; }
     }
 }

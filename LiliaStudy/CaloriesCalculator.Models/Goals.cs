@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace CaloriesCalculator.Models
 {
-    public enum Gender 
+    public enum Goals
     {
-        Male,
-        Female
+        Cut,
+        Keep,
+        Bulk
     }
 }

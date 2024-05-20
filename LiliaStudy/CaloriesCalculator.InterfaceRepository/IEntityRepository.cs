@@ -1,6 +1,8 @@
-﻿namespace CaloriesCalculator.Interface.Repository
+﻿using CaloriesCalculator.Models;
+
+namespace CaloriesCalculator.Interface.Repository
 {
-    public interface IRepository<T>
+    public interface IEntityRepository<T> where T : IEntity
     {
         int Create(T entity);
         void Update(int id, T entity);

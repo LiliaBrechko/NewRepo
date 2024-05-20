@@ -9,7 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaloriesCalculator.Models",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaloriesCalculator.Infrastructure", "CaloriesCalculator.Infrastructure\CaloriesCalculator.Infrastructure.csproj", "{7BEB8B2D-8F40-47E4-8DC3-66F0547BE1FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaloriesCalculator.Interface.Repository", "CaloriesCalculator.InterfaceRepository\CaloriesCalculator.Interface.Repository.csproj", "{0B8457CC-62E4-4FCE-953B-8D30F39ECAE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaloriesCalculator.Interface.Repository", "CaloriesCalculator.InterfaceRepository\CaloriesCalculator.Interface.Repository.csproj", "{0B8457CC-62E4-4FCE-953B-8D30F39ECAE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaloriesCalculator.Repository", "CaloriesCalculator.Repository\CaloriesCalculator.Repository.csproj", "{4588C7D9-DA95-42D1-8C47-D27253301465}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaloriesCalculator.Services", "CaloriesCalculator.Services\CaloriesCalculator.Services.csproj", "{42B5CB6C-FA2E-40F2-8AE3-156CBE648B29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaloriesCalculator.Interface.Services", "CaloriesCalculator.Interface.Services\CaloriesCalculator.Interface.Services.csproj", "{9EB13AE9-30BC-4B86-8207-B9B1193D06E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{0B8457CC-62E4-4FCE-953B-8D30F39ECAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B8457CC-62E4-4FCE-953B-8D30F39ECAE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B8457CC-62E4-4FCE-953B-8D30F39ECAE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4588C7D9-DA95-42D1-8C47-D27253301465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4588C7D9-DA95-42D1-8C47-D27253301465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4588C7D9-DA95-42D1-8C47-D27253301465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4588C7D9-DA95-42D1-8C47-D27253301465}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42B5CB6C-FA2E-40F2-8AE3-156CBE648B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42B5CB6C-FA2E-40F2-8AE3-156CBE648B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42B5CB6C-FA2E-40F2-8AE3-156CBE648B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42B5CB6C-FA2E-40F2-8AE3-156CBE648B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EB13AE9-30BC-4B86-8207-B9B1193D06E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EB13AE9-30BC-4B86-8207-B9B1193D06E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EB13AE9-30BC-4B86-8207-B9B1193D06E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EB13AE9-30BC-4B86-8207-B9B1193D06E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

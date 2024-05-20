@@ -4,18 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CaloriesCalculator.Models
+namespace CaloriesCalculator.Interface.Services.DTO
 {
-    public class Product : IEntity
+    public class UpdateProductDTO
     {
-        public int Id { get; set; }
         public string? Name { get; set; }
         public double CaloriePer100Gram { get; set; }
         public double FatPer100Gram { get; set; }
         public double ProteinPer100Gram { get; set; }
         public double CarbohydratesPer100Gram { get; set; }
-        public ICollection<Portion>? Portions { get; set; }
-
-       
     }
 }
