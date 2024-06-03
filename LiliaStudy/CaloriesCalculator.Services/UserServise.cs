@@ -62,6 +62,17 @@ namespace CaloriesCalculator.Services
             return cardtoreturn;
         }
 
+        public IEnumerable<UserCardDTO> GetAll()
+        {
+            return _userRepository.GetAll().Select(x => new UserCardDTO()
+            {
+                Name = x.Name,
+                Age = x.Age,
+                Gender = x.Gender,
+                DailyCalorie = x.DailyCalorie
+            });
+        }
+
         public double GetCalorieToEat(int userId, DateTime dateTime)
         {
             var dailyCalorie = _userRepository.Get(userId).DailyCalorie;
