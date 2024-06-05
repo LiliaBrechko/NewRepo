@@ -59,7 +59,7 @@
             buttonCreateMeal.Name = "buttonCreateMeal";
             buttonCreateMeal.Size = new Size(135, 29);
             buttonCreateMeal.TabIndex = 2;
-            buttonCreateMeal.Text = "Create Meal";
+            buttonCreateMeal.Text = "Meal";
             buttonCreateMeal.UseVisualStyleBackColor = true;
             buttonCreateMeal.Click += buttonCreateMeal_Click;
             // 

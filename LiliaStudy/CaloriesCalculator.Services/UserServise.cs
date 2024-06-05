@@ -54,6 +54,7 @@ namespace CaloriesCalculator.Services
             var user = _userRepository.Get(id);
             var cardtoreturn = new UserCardDTO()
             {
+                Id = user.Id,
                 Name = user.Name,
                 Age = user.Age,
                 Gender = user.Gender,
@@ -66,6 +67,7 @@ namespace CaloriesCalculator.Services
         {
             return _userRepository.GetAll().Select(x => new UserCardDTO()
             {
+                Id = x.Id,
                 Name = x.Name,
                 Age = x.Age,
                 Gender = x.Gender,

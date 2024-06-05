@@ -73,6 +73,21 @@ namespace CaloriesCalculator.Services
             return card;
         }
 
+        public IEnumerable<MealCardDTO> GetAll()
+        {
+            return _mealsrepository.GetAll().Select(meal => new MealCardDTO
+            {
+                DateTime = meal.DateTime,
+                UserName = _userrepository.Get(meal.UserID).Name,
+                Portions = _portionrepository.GetAll().Where(portion => portion.MealId == meal.Id).
+                Select(portion => new PortionDTO
+                {
+                    Ammount = portion.Ammount,
+                    ProductName = _productrepository.Get(portion.ProductId).Name
+                })
+            });
+        }
+
         public void Update(int id, UpdateMealDTO updateMealDTO)
         {
             var existingportions = _portionrepository.GetAll().Where(i => i.MealId == id);

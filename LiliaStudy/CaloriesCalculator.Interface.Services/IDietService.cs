@@ -13,6 +13,7 @@ namespace CaloriesCalculator.Interface.Services
         int Create(CreateMealDTO createProductDTO);
         void Update(int id, UpdateMealDTO updateProductDTO);
         MealCardDTO Get(int id);
+        IEnumerable<MealCardDTO> GetAll();
         void Delete(int id);
 
         

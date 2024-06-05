@@ -3,6 +3,7 @@ using CaloriesCalculator.Interface.Repository;
 using CaloriesCalculator.Interface.Services;
 using CaloriesCalculator.Interface.Services.DTO;
 using CaloriesCalculator.Models;
+
 namespace CaloriesCalculator.Services
 {
     public class ProductService : IProductService
@@ -38,10 +39,21 @@ namespace CaloriesCalculator.Services
             var product = _productRepository.Get(id);
             var card = new ProductCardDTO()
             {
+                Id = product.Id,
                 Name = product.Name,
                CaloriePer100Gram = product.CaloriePer100Gram,
             };
             return card;
+        }
+
+        public IEnumerable<ProductCardDTO> GetAll()
+        {
+            return _productRepository.GetAll().Select(product => new ProductCardDTO()
+            {
+                Id = product.Id,
+                Name = product.Name,
+                CaloriePer100Gram = product.CaloriePer100Gram,
+            });
         }
 
         public void Update(int id, UpdateProductDTO updateProductDTO)
