@@ -60,10 +60,12 @@ namespace CaloriesCalculator.Services
             var meal = _mealsrepository.Get(id);
             var card = new MealCardDTO
             {
+                Id = id,
                 DateTime = meal.DateTime,
                 UserName = _userrepository.Get(meal.UserID).Name,
                 Portions = _portionrepository.GetAll().Where(p => p.MealId == id).Select(p => new PortionDTO
                 {
+                    ProductId = p.ProductId,
                     Ammount = p.Ammount,
                     ProductName = _productrepository.Get(p.ProductId).Name
                 })
@@ -77,11 +79,13 @@ namespace CaloriesCalculator.Services
         {
             return _mealsrepository.GetAll().Select(meal => new MealCardDTO
             {
+                Id = meal.Id,
                 DateTime = meal.DateTime,
                 UserName = _userrepository.Get(meal.UserID).Name,
                 Portions = _portionrepository.GetAll().Where(portion => portion.MealId == meal.Id).
                 Select(portion => new PortionDTO
                 {
+                    ProductId = portion.ProductId,
                     Ammount = portion.Ammount,
                     ProductName = _productrepository.Get(portion.ProductId).Name
                 })

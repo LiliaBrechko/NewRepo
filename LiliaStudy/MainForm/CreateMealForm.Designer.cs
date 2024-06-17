@@ -37,6 +37,10 @@
             label2 = new Label();
             textBoxAmmount = new TextBox();
             label3 = new Label();
+            buttonAddPortion = new Button();
+            buttonDeleteMeal = new Button();
+            buttonDeletePortion = new Button();
+            buttonUpdatePortion = new Button();
             SuspendLayout();
             // 
             // comboBoxUsers
@@ -118,11 +122,55 @@
             label3.TabIndex = 8;
             label3.Text = "Ammount";
             // 
+            // buttonAddPortion
+            // 
+            buttonAddPortion.Location = new Point(33, 356);
+            buttonAddPortion.Name = "buttonAddPortion";
+            buttonAddPortion.Size = new Size(141, 40);
+            buttonAddPortion.TabIndex = 9;
+            buttonAddPortion.Text = "Add portion";
+            buttonAddPortion.UseVisualStyleBackColor = true;
+            buttonAddPortion.Click += buttonAddPortion_Click;
+            // 
+            // buttonDeleteMeal
+            // 
+            buttonDeleteMeal.Location = new Point(764, 78);
+            buttonDeleteMeal.Name = "buttonDeleteMeal";
+            buttonDeleteMeal.Size = new Size(117, 38);
+            buttonDeleteMeal.TabIndex = 10;
+            buttonDeleteMeal.Text = "Delete Meal";
+            buttonDeleteMeal.UseVisualStyleBackColor = true;
+            buttonDeleteMeal.Click += buttonDeleteMeal_Click;
+            // 
+            // buttonDeletePortion
+            // 
+            buttonDeletePortion.Location = new Point(764, 345);
+            buttonDeletePortion.Name = "buttonDeletePortion";
+            buttonDeletePortion.Size = new Size(117, 40);
+            buttonDeletePortion.TabIndex = 11;
+            buttonDeletePortion.Text = "Delete Portion";
+            buttonDeletePortion.UseVisualStyleBackColor = true;
+            buttonDeletePortion.Click += buttonDeletePortion_Click;
+            // 
+            // buttonUpdatePortion
+            // 
+            buttonUpdatePortion.Location = new Point(764, 403);
+            buttonUpdatePortion.Name = "buttonUpdatePortion";
+            buttonUpdatePortion.Size = new Size(117, 50);
+            buttonUpdatePortion.TabIndex = 12;
+            buttonUpdatePortion.Text = "UpdatePortion";
+            buttonUpdatePortion.UseVisualStyleBackColor = true;
+            buttonUpdatePortion.Click += buttonUpdatePortion_Click;
+            // 
             // CreateMealForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1196, 695);
+            Controls.Add(buttonUpdatePortion);
+            Controls.Add(buttonDeletePortion);
+            Controls.Add(buttonDeleteMeal);
+            Controls.Add(buttonAddPortion);
             Controls.Add(label3);
             Controls.Add(textBoxAmmount);
             Controls.Add(label2);
@@ -150,5 +198,9 @@
         private Label label2;
         private TextBox textBoxAmmount;
         private Label label3;
+        private Button buttonAddPortion;
+        private Button buttonDeleteMeal;
+        private Button buttonDeletePortion;
+        private Button buttonUpdatePortion;
     }
 }

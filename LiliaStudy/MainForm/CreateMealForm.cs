@@ -119,13 +119,75 @@ namespace MainForm
 
         private void buttonCreateMeal_Click(object sender, EventArgs e)
         {
-           UserCardDTO currentUser = (UserCardDTO)comboBoxUsers.SelectedItem;
+            UserCardDTO currentUser = (UserCardDTO)comboBoxUsers.SelectedItem;
+
+            var newMeal = new CreateMealDTO(currentUser.Id, DateTime.Now, new Dictionary<int, double>());
+            _dietService.Create(newMeal);
+        }
+
+        private void buttonAddPortion_Click(object sender, EventArgs e)
+        {
+            var currentmeal = ((MealCardDTO)listBoxMeals.SelectedItem).Id;
             var ammount = double.Parse(textBoxAmmount.Text);
             var productId = ((ProductCardDTO)comboBoxProducts.SelectedItem).Id;
-            var portions = new Dictionary<int, double>();
+            var portions = listBoxPortions.Items.Cast<PortionDTO>().ToDictionary(keySelector => keySelector.ProductId, valueSelector => valueSelector.Ammount);
+          
+            if (!portions.Select(portion=> portion.Key).Contains(productId))
+            {
+                portions.Add(productId, ammount);
+                
+
+            }
+            else
+            { 
+                var currentPortion = ((PortionDTO)listBoxPortions.SelectedItem);
+                var productAmmount = ammount + currentPortion.Ammount;
+
+                portions = listBoxPortions.Items.Cast<PortionDTO>().Where(portionDto => portionDto.ProductId != currentPortion.ProductId).
+                ToDictionary(keySelector => keySelector.ProductId, valueSelector => valueSelector.Ammount);
+                portions.Add(currentPortion.ProductId, productAmmount);
+
+            }
+            _dietService.Update(currentmeal, new UpdateMealDTO() { DateTime = DateTime.Now, Portions = portions });
+
+        }
+
+        private void buttonDeleteMeal_Click(object sender, EventArgs e)
+        {
+            var currentmeal = ((MealCardDTO)listBoxMeals.SelectedItem).Id;
+            _dietService.Delete(currentmeal);
+
+
+        }
+
+        private void buttonDeletePortion_Click(object sender, EventArgs e)
+        {
+            var currentPortion = ((PortionDTO)listBoxPortions.SelectedItem);
+            var portions = listBoxPortions.Items.Cast<PortionDTO>().Where(portionDto => portionDto.ProductId != currentPortion.ProductId).
+                ToDictionary(keySelector => keySelector.ProductId, valueSelector => valueSelector.Ammount);
+
+            var mealId = ((MealCardDTO)listBoxMeals.SelectedItem).Id;
+            _dietService.Update(mealId, new UpdateMealDTO() { DateTime = DateTime.Now, Portions = portions });
+
+        }
+
+        private void buttonUpdatePortion_Click(object sender, EventArgs e)
+        {
+
+            var ammount = double.Parse(textBoxAmmount.Text);
+            var productId = ((ProductCardDTO)comboBoxProducts.SelectedItem).Id;
+
+
+            var currentPortion = ((PortionDTO)listBoxPortions.SelectedItem);
+            var portions = listBoxPortions.Items.Cast<PortionDTO>().Where(portionDto => portionDto.ProductId != currentPortion.ProductId).
+                ToDictionary(keySelector => keySelector.ProductId, valueSelector => valueSelector.Ammount);
             portions.Add(productId, ammount);
-            var newMeal = new CreateMealDTO(currentUser.Id, DateTime.Now, portions);
-            _dietService.Create(newMeal);
+
+            var mealId = ((MealCardDTO)listBoxMeals.SelectedItem).Id;
+            _dietService.Update(mealId, new UpdateMealDTO() { DateTime = DateTime.Now, Portions = portions });
+
+
+
         }
     }
 }
