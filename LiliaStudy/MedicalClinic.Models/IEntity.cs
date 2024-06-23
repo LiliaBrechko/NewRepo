@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MedicalClinic.Models
 {
-    public class IEntity
+    public interface IEntity
     {
         int Id {  get; set; }
     }
