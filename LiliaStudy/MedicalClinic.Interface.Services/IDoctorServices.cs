@@ -10,5 +10,7 @@ namespace MedicalClinic.Interface.Services
         IEnumerable<DoctorDTO> GetAll();
         void Delete(int id);
 
+        IEnumerable<ConclusionDTO> GetAllConclusion(int doctorId, int patientId);
+
     }
 }

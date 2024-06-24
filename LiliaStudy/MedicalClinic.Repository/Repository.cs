@@ -1,6 +1,8 @@
 ﻿using MedicalClinic.Infrastructure;
 using MedicalClinic.Interface.Repository;
 using MedicalClinic.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace MedicalClinic.Repository
 {
@@ -22,6 +24,7 @@ namespace MedicalClinic.Repository
         {
             using (var db = new ApplicationContext())
             {
+                
                 var entities = db.Set<T>().Where(e=> id.Contains(e.Id));
                 db.Set<T>().RemoveRange(entities);  
                 db.SaveChanges();
@@ -29,31 +32,53 @@ namespace MedicalClinic.Repository
            
         }
 
-        public T Get(int id)
+        public T Get(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includes)
         {
             using (var db = new ApplicationContext())
             {
-                return db.Set<T>().FirstOrDefault(e => e.Id == id);
+                IQueryable<T> query = db.Set<T>();
+
+                if (includes != null)
+                {
+                    query = includes.Aggregate(query, (current, include) => current.Include(include));
+                }
+
+                return query.FirstOrDefault(predicate);
             }
-            
         }
 
-        public IEnumerable<T> GetAll()
+        public V GetProjected<V>(Expression<Func<T, bool>> predicate, Expression<Func<T, V>> selector)
         {
             using (var db = new ApplicationContext())
             {
-                return db.Set<T>().ToArray();
+                IQueryable<T> query = db.Set<T>();
+
+                return query.Where(predicate).Select(selector).FirstOrDefault();
             }
-            
+        }
+
+        public IEnumerable<T> GetAll(params Expression<Func<T, object>>[] includes)
+        {
+            using (var db = new ApplicationContext())
+            {
+                IQueryable<T> query = db.Set<T>();
+
+                if (includes != null)
+                {
+                    query = includes.Aggregate(query, (current, include) => current.Include(include));
+                }
+
+                return query.ToArray();
+            }
+
         }
 
         public void Update(T entity)
         {
             using (var db = new ApplicationContext())
             {
-                var entityToUpdate = db.Set<T>().FirstOrDefault(e=> e.Id == entity.Id);
-                db.Entry(entityToUpdate).CurrentValues.SetValues(entity);
-                db.SaveChanges();
+                 db.Set<T>().Update(entity);
+                 db.SaveChanges();
 
             }
 

@@ -17,4 +17,13 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MedicalClinic.Infrastructure\MedicalClinic.Infrastructure.csproj" />
+    <ProjectReference Include="..\MedicalClinic.Interface.Repository\MedicalClinic.Interface.Repository.csproj" />
+    <ProjectReference Include="..\MedicalClinic.Interface.Services\MedicalClinic.Interface.Services.csproj" />
+    <ProjectReference Include="..\MedicalClinic.Models\MedicalClinic.Models.csproj" />
+    <ProjectReference Include="..\MedicalClinic.Repository\MedicalClinic.Repository.csproj" />
+    <ProjectReference Include="..\MedicalClinic.Services\MedicalClinic.Services.csproj" />
+  </ItemGroup>
+
 </Project>

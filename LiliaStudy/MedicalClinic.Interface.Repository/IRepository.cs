@@ -1,4 +1,5 @@
-﻿using System.Security.Principal;
+﻿using System.Linq.Expressions;
+using System.Security.Principal;
 using MedicalClinic.Models;
 
 namespace MedicalClinic.Interface.Repository
@@ -8,8 +9,9 @@ namespace MedicalClinic.Interface.Repository
         int Create(T entity);
         void Update(T entity);
         void Delete(params int[] id);
-        T Get(int id);
-        IEnumerable<T> GetAll();
+        T Get(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includes);
+        V GetProjected<V>(Expression<Func<T, bool>> predicate, Expression<Func<T, V>> selector);
+        IEnumerable<T> GetAll(params Expression<Func<T, object>>[] includes);
 
     }
 }

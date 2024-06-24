@@ -12,6 +12,6 @@ namespace MedicalClinic.Interface.Services.DTO
         public int DoctorId { get; set; }
         public DateTime AppointmentDate { get; set; }
         public string? Reason { get; set; }
-        public string? Recomendation { get; set; }
+ 
     }
 }

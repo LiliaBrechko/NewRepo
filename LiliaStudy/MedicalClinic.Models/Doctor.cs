@@ -5,8 +5,9 @@
         public int Id { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
-        public string? Specialization { get; set; }
-        public IEnumerable<Appointment>? Appointments { get; set; }
+        public DoctorType Specialization { get; set; }
+        public ICollection<Appointment>? Appointments { get; set; }
+        
 
     }
 }

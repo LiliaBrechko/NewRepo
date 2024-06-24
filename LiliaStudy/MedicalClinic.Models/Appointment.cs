@@ -11,14 +11,15 @@ namespace MedicalClinic.Models
     {
         public int Id { get; set; }
         public int PatientId { get; set; }
-        [ForeignKey("PatientId")]
+        
         public int DoctorId { get; set; }
-        [ForeignKey("DoctorId")]
+        
         public DateTime AppointmentDate { get; set; }
         public string? Reason { get; set; }
-        public string? Recomendation { get; set; }
 
+        [ForeignKey("PatientId")]
         public Patient? Patient { get; set; }
+        [ForeignKey("DoctorId")]
         public Doctor? Doctor { get; set; }
     }
 }

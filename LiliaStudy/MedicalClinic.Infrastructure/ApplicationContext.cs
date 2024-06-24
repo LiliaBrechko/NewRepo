@@ -1,6 +1,7 @@
 ﻿using MedicalClinic.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System.Diagnostics;
 
 
 namespace MedicalClinic.Infrastructure
@@ -10,12 +11,14 @@ namespace MedicalClinic.Infrastructure
         public DbSet<Doctor> Doctors { get; set; } = null!;
         public DbSet<Patient> Patients { get; set; } = null!;
         public DbSet<Appointment> Appointments { get; set; } = null!;
+        public DbSet<Conclusion> Сonclusions {  get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var builder = new ConfigurationBuilder().SetBasePath(Directory.
-                GetCurrentDirectory()).AddJsonFile("ApplicationSetting.json").Build();
+                GetCurrentDirectory()).AddJsonFile("F:\\Visual Studio\\LiliaStudyGit\\LiliaStudy\\MedicalClinic.Infrastructure\\ApplicationSetting.json").Build();
             optionsBuilder.UseSqlite(builder.GetConnectionString("DefaultConnection"));
+            optionsBuilder.LogTo(message => System.Diagnostics.Debug.WriteLine(message));
 
         }
 
@@ -33,6 +36,13 @@ namespace MedicalClinic.Infrastructure
                 .HasOne(a => a.Patient)
                 .WithMany(p => p.Appointments)
                 .HasForeignKey(a => a.PatientId);
+
+            modelBuilder.Entity<Conclusion>().HasOne(a => a.Appoinment);
+
+
+            modelBuilder.Entity<Patient>()
+            .ToTable(t => t.HasCheckConstraint("Patient_DateOfBirth", "DateOfBirth < CURRENT_TIMESTAMP"));
+
         }
 
     }

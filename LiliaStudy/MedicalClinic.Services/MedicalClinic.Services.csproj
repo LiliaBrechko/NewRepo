@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MedicalClinic.Interface.Repository\MedicalClinic.Interface.Repository.csproj" />
     <ProjectReference Include="..\MedicalClinic.Interface.Services\MedicalClinic.Interface.Services.csproj" />
   </ItemGroup>
 

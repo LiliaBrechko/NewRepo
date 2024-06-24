@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedicalClinic.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,6 @@ namespace MedicalClinic.Interface.Services.DTO
     public class UpdateDoctorDTO
     {
         public string? LastName { get; set; }
-        public string? Specialization { get; set; }
+        public DoctorType Specialization { get; set; }
     }
 }
