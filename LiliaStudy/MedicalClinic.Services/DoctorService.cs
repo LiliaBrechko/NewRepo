@@ -1,4 +1,5 @@
-﻿using MedicalClinic.Interface.Repository;
+﻿using AutoMapper;
+using MedicalClinic.Interface.Repository;
 using MedicalClinic.Interface.Services;
 using MedicalClinic.Interface.Services.DTO;
 using MedicalClinic.Models;
@@ -6,16 +7,11 @@ using MedicalClinic.Models;
 namespace MedicalClinic.Services
 {
     public class DoctorService(IRepository<Patient> _patientRepository, IRepository<Doctor> _doctorRepository,
-        IRepository<Appointment> _appointmentRepository, IRepository<Conclusion> _conclusionRepository) : IDoctorServices
+        IRepository<Appointment> _appointmentRepository, IRepository<Conclusion> _conclusionRepository, IMapper mapper) : IDoctorServices
     {
         public int Create(CreateDoctorDTO createDoctorDTO)
         {
-            var doctor = new Doctor
-            {
-                FirstName = createDoctorDTO.FirstName,
-                LastName = createDoctorDTO.LastName,
-                Specialization = createDoctorDTO.Specialization,
-            };
+            var doctor = mapper.Map<Doctor>(createDoctorDTO);
             return _doctorRepository.Create(doctor);
         }
 
@@ -23,12 +19,7 @@ namespace MedicalClinic.Services
         {
             foreach (var doctordto in addDoctorsDTO)
             {
-                var doctor = new Doctor
-                {
-                    FirstName = doctordto.FirstName,
-                    LastName = doctordto.LastName,
-                    Specialization = doctordto.Specialization,
-                };
+                var doctor = mapper.Map<Doctor>(doctordto);
                 _doctorRepository.Create(doctor);
             }
             
@@ -41,24 +32,14 @@ namespace MedicalClinic.Services
 
         public DoctorDTO Get(int id)
         {
-            var currentDoctor = _doctorRepository.Get(x => x.Id == id);
-            var doctor = new DoctorDTO
-            {
-                FirstName = currentDoctor.FirstName,
-                LastName = currentDoctor.LastName,
-                Specialization = currentDoctor.Specialization,
-            };
-            return doctor;
+            var currentDoctor = _doctorRepository.Get(x => x.Id == id, x=>x.Appointments);
+            return mapper.Map<DoctorDTO>(currentDoctor);
+           
         }
 
         public IEnumerable<DoctorDTO> GetAll()
         {
-            return _doctorRepository.GetAll().Select(d => new DoctorDTO
-            {
-                FirstName = d.FirstName,
-                LastName = d.LastName,
-                Specialization = d.Specialization
-            });
+            return _doctorRepository.GetAll().Select(mapper.Map<DoctorDTO>);
         }
 
         public IEnumerable<ConclusionDTO> GetAllConclusion(int doctorId, int patientId)

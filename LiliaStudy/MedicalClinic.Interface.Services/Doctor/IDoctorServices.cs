@@ -1,4 +1,5 @@
-﻿using MedicalClinic.Interface.Services.DTO;
+﻿
+using MedicalClinic.Interface.Services.DTO;
 
 namespace MedicalClinic.Interface.Services
 {

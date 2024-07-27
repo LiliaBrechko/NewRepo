@@ -1,4 +1,5 @@
-﻿using MedicalClinic.Interface.Repository;
+﻿using AutoMapper;
+using MedicalClinic.Interface.Repository;
 using MedicalClinic.Interface.Services;
 using MedicalClinic.Interface.Services.DTO;
 using MedicalClinic.Models;
@@ -11,17 +12,11 @@ using System.Threading.Tasks;
 namespace MedicalClinic.Services
 {
     public class AppointmentServices(IRepository<Patient> _patientRepository, IRepository<Doctor> _doctorRepository,
-        IRepository<Appointment> _appointmentRepository) : IAppointmentService
+        IRepository<Appointment> _appointmentRepository, IMapper mapper) : IAppointmentService
     {
         public int Create(CreateAppointmentDTO createAppointmentDTO)
         {
-            var appointment = new Appointment()
-            {
-                AppointmentDate = createAppointmentDTO.AppointmentDate,
-                DoctorId = createAppointmentDTO.DoctorId,
-                PatientId = createAppointmentDTO.PatientId,
-                Reason = createAppointmentDTO.Reason,
-            };
+            var appointment = mapper.Map<Appointment>(createAppointmentDTO);
             return _appointmentRepository.Create(appointment);
         }
 
@@ -33,24 +28,13 @@ namespace MedicalClinic.Services
         public AppointmentDTO Get(int id)
         {
             var currentappointment = _appointmentRepository.Get(a=> a.Id == id);
-            return new AppointmentDTO()
-            {
-                AppointmentDate = currentappointment.AppointmentDate,
-                DoctorId = currentappointment.DoctorId,
-                PatientId = currentappointment.PatientId,
-                Reason = currentappointment.Reason,
-            };
+            return mapper.Map<AppointmentDTO>(currentappointment);
         }
 
         public IEnumerable<AppointmentDTO> GetAll()
         {
-            return _appointmentRepository.GetAll().Select(a => new AppointmentDTO()
-            {
-                AppointmentDate = a.AppointmentDate,
-                DoctorId = a.DoctorId,
-                PatientId = a.PatientId,
-                Reason = a.Reason,
-            });
+            return _appointmentRepository.GetAll().Select(mapper.Map<AppointmentDTO>);
+            
         }
 
         public void Update(int id, UpdateAppointmentDTO updateAppointmentDTO)

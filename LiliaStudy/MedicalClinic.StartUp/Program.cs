@@ -6,31 +6,29 @@ using MedicalClinic.Repository;
 using System.Security.Cryptography.X509Certificates;
 using MedicalClinic.Interface.Services;
 using MedicalClinic.Interface.Services.DTO;
+using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
 
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        Repository<Doctor> _doctorsrepository = new Repository<Doctor>();
-        Repository<Patient> _patientsrepository = new Repository<Patient>();
-        Repository<Appointment> _appointmentsrepository = new Repository<Appointment>();
-        Repository<Conclusion> _conclusionrepository = new Repository<Conclusion>();
+        var services = new ServiceCollection().RegisterRepositories().RegisterServices();
+        var serviceprovider = services.BuildServiceProvider();
 
-        DoctorService doctorService = new DoctorService(_patientsrepository, _doctorsrepository, _appointmentsrepository, _conclusionrepository);
-        PatientService patientService = new PatientService(_patientsrepository, _doctorsrepository, _appointmentsrepository);
-        AppointmentServices appointmentService = new AppointmentServices(_patientsrepository, _doctorsrepository, _appointmentsrepository);
-        ClinicService clinicService = new ClinicService(_doctorsrepository, appointmentService);
+        
 
-
-
+        IDoctorServices doctorService = serviceprovider.GetRequiredService<IDoctorServices>();
+        IPatientService patientService = serviceprovider.GetRequiredService<IPatientService>();
+        IAppointmentService appointmentService =serviceprovider.GetRequiredService<IAppointmentService>();
+        IClinicService clinicService = serviceprovider.GetRequiredService<IClinicService>();
+        
 
 
-        var val = _appointmentsrepository.GetAll(x => x.Patient, x => x.Doctor).ToList();
-        var concreteAppointment = _appointmentsrepository.Get(x => x.Patient.Id == 1, x => x.Doctor);
+        var doctor = doctorService.Get(1);
 
-        var concreteAppointment1 = _appointmentsrepository.GetProjected(x => x.Patient.Id == 1, x => new {x.Doctor.FirstName, x.Doctor.LastName });
-
+        
        
 
         //new CreatePatientDTO {FirstName = "James", LastName = "Anderson", DateOfBirth = new DateOnly(1982, 11, 11), Gender = Gender.Male, PhoneNumber = "1231231234", Email = "james.anderson@example.com" },
