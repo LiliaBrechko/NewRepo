@@ -1,0 +1,1 @@
+﻿public record CarListItem(Guid Id, string Mark);
