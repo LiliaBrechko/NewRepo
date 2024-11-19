@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MedicalClinic.Interface.Services.DTO
 {
-    public class CreatePatientDTO
+    public class CreatePatientDTO 
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }

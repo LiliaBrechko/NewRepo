@@ -15,16 +15,16 @@ namespace MedicalClinic.Services
         public MappingProfile()
         {
             CreateMap<Doctor, DoctorDTO>();
-            CreateMap<Doctor, CreateDoctorDTO>();
-            CreateMap<Doctor, UpdateDoctorDTO>();
+            CreateMap<CreateDoctorDTO,Doctor>();
+            CreateMap<UpdateDoctorDTO,Doctor>();
 
             CreateMap<Appointment, AppointmentDTO>();
-            CreateMap<Appointment, CreateAppointmentDTO>();
-            CreateMap<Appointment, UpdateAppointmentDTO>();
+            CreateMap<CreateAppointmentDTO, Appointment>();
+            CreateMap<UpdateAppointmentDTO, Appointment>();
 
-            CreateMap<Patient, CreatePatientDTO>();
-            CreateMap<Patient, CreatePatientDTO>();
-            CreateMap<Patient, CreatePatientDTO>();
+            CreateMap<Patient, PatientDTO>();
+            CreateMap<CreatePatientDTO, Patient>();
+            CreateMap<UpdatePatientDTO, Patient>();
         }
     }
 }
