@@ -6,7 +6,7 @@ namespace CarStore.Domain.Models.Cars;
 public class Car : Entity
 {
     public CarId Id { get; private set; }
-    public Money InitialPrice { get; private set; }
+    public Money InitialPrice { get; set; }
     public CarMark Mark { get; private set; }
     public DateTime Created { get; private set; }
     public bool IsNew

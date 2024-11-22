@@ -4,7 +4,7 @@ using CarStore.Domain.Services.DomainEvents;
 
 namespace CarStore.Infrastructure.DB;
 
-internal sealed class UnitOfWork : IUnitOfWork
+public sealed class UnitOfWork : IUnitOfWork
 {
     private readonly CarStoreDbContext _context;
     private readonly DomainEventDispatcher _domainEventDispatcher;
