@@ -10,7 +10,8 @@ public class CarStoreDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite("Data Source = \"E:\\CommonRepository\\LiliaSolution\\CarStore.Infrastructure.DB\\CarStoreDatabase.db\"");
+        optionsBuilder.UseSqlite("Data Source = \"E:\\CommonRepository\\LiliaSolution\\CarStore.Infrastructure.DB\\CarStoreDatabase.db\"")
+            .LogTo(message => System.Diagnostics.Debug.WriteLine(message));
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
