@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CarStore.Application.Services\CarStore.Application.Services.csproj" />
+    <ProjectReference Include="..\CarStore.Authentication\CarStore.Authentication.csproj" />
     <ProjectReference Include="..\CarStore.Domain.Services\CarStore.Domain.Services.csproj" />
     <ProjectReference Include="..\CarStore.Infrastructure.DB\CarStore.Infrastructure.DB.csproj" />
     <ProjectReference Include="..\CarStore.Presentation\CarStore.Presentation.csproj" />

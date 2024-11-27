@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CarStore.Application.Services\CarStore.Application.Services.csproj" />
+    <ProjectReference Include="..\CarStore.Authentication\CarStore.Authentication.csproj" />
     <ProjectReference Include="..\CarStore.Domain.Services\CarStore.Domain.Services.csproj" />
   </ItemGroup>
 
