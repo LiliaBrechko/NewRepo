@@ -69,7 +69,11 @@ namespace MedicalClinic.Services
         public void Update(int id, UpdateDoctorDTO updateDoctorDTO)
         {
             var doctorToUpdate = _doctorRepository.Get(d => d.Id == id);
-            doctorToUpdate.Specialization = updateDoctorDTO.Specialization;
+            if (doctorToUpdate.Specialization != updateDoctorDTO.Specialization)
+            {
+                throw new Exception("wrong");
+            }    
+           
             doctorToUpdate.LastName = updateDoctorDTO.LastName;
             _doctorRepository.Update(doctorToUpdate);
         }
